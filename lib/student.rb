@@ -18,14 +18,16 @@ def self.create_table
         )
         SQL
     DB[:conn].execute(sql) 
-  end
+end
   
 def self.drop_table 
    sql =  <<-SQL 
       
         SQL
     DB[:conn].execute(sql) 
-  end
+end
+
+def save 
   
   
 end
