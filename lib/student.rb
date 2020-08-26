@@ -28,6 +28,15 @@ def self.drop_table
 end
 
 def save 
-  
+  sql = <<-SQL
+      INSERT INTO student (name, grade) 
+      VALUES (?, ?)
+    SQL
+ 
+    DB[:conn].execute(sql, self.name, self.grade)
+ 
+    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM student")[0][0]
+ 
+end
   
 end
